@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "vf-analysis"
+version = "0.1.0"
+description = ""
+authors = ["dsurujon <defnesurujon@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+biopython = "^1.84"
+pygenomeviz = "^1.4.2"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
