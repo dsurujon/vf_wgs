@@ -92,6 +92,7 @@ Across both analyses, there were a total of 5 loci with genotypes that differed 
 | CP000020   |  2123037   | 	VF_RS09800 porin  |  chiP ←	chitoporin ChiP |
 | CP000021   |  1181399-415  | 	hdfR / VF_RS18695 (missing N term)  |  hdfR → / → VF_A1047	DNA‑binding transcriptional regulator/magnesium transporter MgtE  | 
 | CP000021   |  1313731  | VF_RS19280 	Ig-like domain-containing protein |  rtxA2 ←	RTX (repeats in toxin) calcium‑binding cytotoxin RtxA2 | 
+    
 These loci also had additional mutations that were common across all samples.     
 
 #### VF_RS04475
