@@ -24,7 +24,10 @@ poetry run python ./code/fastani_visualize.py \
 ```
 
 ![image](output/fastani/ES114_2008_vs_new_fastANI.png)
-Overall the genomes overlap well
+Overall the genomes overlap well.     
+Since the variant analysis with BreSeq was done using the RefSeq assembly `ASM1180v1`, we also compare this genome to the new annotation from Alix. See the script `compare_refseq_vs_AP_asm.sh`.     
+![image](output/fastani/ASM1180v1_vs_newAP_fastANI.png)
+This comparison also looks fine overlap. 
 
 ### quality control
 ```
