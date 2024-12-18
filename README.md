@@ -78,6 +78,7 @@ poetry run python ./code/filter_gd.py -i output/variants/gd/ \
     -o /root/Alix/output/variants/filtered_l10_u50_flip.csv \
     -l 10 -u 50 -C
 ```
+Note that the `filter_gd.py` script considers only a subset of mutation types. For more information different mutation types and on how to interpret the BreSeq output, see the [BreSeq wiki - Methods page](https://github.com/barricklab/breseq/wiki/Methods).     
 
 As a slightly different approach, we also get mutations unique to each group using bcftools/vcftools. For this analysis refer to `code/analyze_variants.sh`
 
@@ -91,11 +92,26 @@ Across both analyses, there were a total of 5 loci with genotypes that differed 
 | CP000020   |  2123037   | 	VF_RS09800 porin  |  chiP ←	chitoporin ChiP |
 | CP000021   |  1181399-415  | 	hdfR / VF_RS18695 (missing N term)  |  hdfR → / → VF_A1047	DNA‑binding transcriptional regulator/magnesium transporter MgtE  | 
 | CP000021   |  1313731  | VF_RS19280 	Ig-like domain-containing protein |  rtxA2 ←	RTX (repeats in toxin) calcium‑binding cytotoxin RtxA2 | 
+These loci also had additional mutations that were common across all samples.     
 
-Of the above mutations/loci, the chiP porin mutations seem to have something interesting going on. There's 2 genotypes, one with many mutations (genotype 1), and another with a single C->T mutation (genotype 2).
+#### VF_RS04475
+Annotated CDS on the RefSeq assembly is frameshifted and has internal stops.     
+There is a 1bp deletion at 940,694 that is present in 1561, 1563 and 1563A (3/4 strains with the noted phenotype). 
+
+#### tRNA-Arg intergenic region
+This region on the reference genome is very repetitive, with multiple copies of the tRNA gene in tandem. There are mutations and new junctions around VF_T0020 - VF_T0025 across all samples. This might just be a challenging region to sequence with Illumina due to the repeats. 
+
+#### chiP
+Of the above mutations/loci, the chiP porin mutations seem to have something interesting going on. There's 2 genotypes, one with many mutations (including V344V @ 2123019, T338T), and another with a single C->T mutation (L306L @ 2123133). All mutations are at the C term end of the chiP CDS. 
 
 ChiP is an outer membrane porin that is involved in the transport of chito-oligosaccharides. 
 
+#### hdfR / VF_RS18695
+Intergenic mutation. All samples have missing coverage around the start of the transporter gene (VF_RS18695). On the RefSeq assembly, the annotation for the transporter has a missing N terminal end. The part that is missing from the sequenced strains correspond to an additional gap near the N terminal end of the CDS.     
+All samples have 3-8 mutations near the missing region (intergenic), the mutations are consistent across samples. 
+
+#### rtxA2
+All samples have a couple of consistent rtxA2 mutations. 
 
 
 
