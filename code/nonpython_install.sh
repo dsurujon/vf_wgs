@@ -26,3 +26,10 @@ cd ~/tools
 wget https://github.com/ablab/spades/releases/download/v4.0.0/SPAdes-4.0.0-Linux.tar.gz
 tar -xzf SPAdes-4.0.0-Linux.tar.gz
 export PATH=$PATH:/root/tools/SPAdes-4.0.0-Linux/bin/
+
+# seqtk
+cd ~/tools
+git clone https://github.com/lh3/seqtk.git
+cd seqtk
+make
+cp seqtk /root/bin/
