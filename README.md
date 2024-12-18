@@ -129,7 +129,36 @@ cd ../../../output/asm/1561
 seqtk seq -L 500 scaffolds.fasta > filtered_scaffolds.fasta
 poetry run quast.py filtered_scaffolds.fasta -o quast
 ```
-This first example yielded a decent enough assembly. 4.2 MBs, 38% GC, 31 contigs > 500bp, L50 is 3. 
+This first example yielded a decent enough assembly. 4.2 MBs, 38% GC, 31 contigs > 500bp, L50 is 3.     
+Annotate using bakta - I want to see if I can find the same mutations on the de novo assembly, and see which contigs correspond to which replicon. 
+```
+# if this is your first time running bakta, you will need to download the reference database
+poetry run bakta_db download --type full
+mv  db /root/tools/bakta_db
+export BAKTA_DB=/root/tools/bakta_db
+
+cd output/asm/1561
+poetry run bakta filtered_scaffolds.fasta --output bakta/ --force --skip-trna --skip-crispr
+```
+Had some trouble with one of bakta's dependencies, tRNAscan-SE. Therefore we are skipping tRNA annotation for now.     
+lacZ gene appears in contig 4 and contig 8. Contig 8 has 5x the depth of chromosomal contigs. The other notable outlier is contig 16 (45.9kb, 2x depth compared to chromosomal) - this is the plasmid pES100, confirmed by BLAST and fastANI below. 
+
+Use fastANI for comparing this assembly to the RefSeq assembly
+```
+fastANI -k 20 -q ./output/asm/1561/filtered_scaffolds.fasta \
+    -r GCF_000011805.1_ASM1180v1_genomic.fna \
+    -o ./output/fastani/1561denovo_vs_ASM1180v1_fastANI.tsv \
+    --visualize
+
+poetry run python ./code/fastani_visualize.py \
+    ./output/asm/1561/filtered_scaffolds.fasta \
+    GCF_000011805.1_ASM1180v1_genomic.fna \
+    ./output/fastani/1561denovo_vs_ASM1180v1_fastANI.tsv.visual \
+    ./output/fastani/1561denovo_vs_ASM1180v1_fastANI.png
+```
+![image](output/fastani/1561denovo_vs_ASM1180v1_fastANI.png)
+There's a section at the very end that doesn't map to the ES114 reference, this is probably the additional plasmid with the engineered regulatory construct.     
+Contig 8 has a copy of lacZ, followed by 2 predicted oriT sites, a gap and finally the acs gene. It also looks like it's mapping to Chromosome I (CP000020.2), and the genetic context following acs (2,672,512-2,674,461 on chromosome) is conserved.       
 
 ## Environment
-Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`
+Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`. Some of the tools used in this analysis were already installed on my machine (e.g. amrfinderplus, which is a dependency of bakta), those will not be included in the bash script. 
