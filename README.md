@@ -116,5 +116,20 @@ All samples have 3-8 mutations near the missing region (intergenic), the mutatio
 All samples have a couple of consistent rtxA2 mutations (D1795N, L1265F). The mutations that are strain-specific mostly are synonymous (P861P, P1783P, A1782A).     
 1561ER, 1563B have an additional D865E - but this doesn't seem to correlate with phenotype. 
 
+## De novo assemblies
+
+```
+mkdir output/asm/
+cd  drive-download-20241111T172643Z-001/QUO1002548-20221114/Illumina\ DNA\ Reads/
+spades.py -o ../../../output/asm/1561/ \
+    -1 VF_WT_1561_S179_R1_001.fastq.gz \
+    -2 VF_WT_1561_S179_R2_001.fastq.gz \
+    --isolate
+cd ../../../output/asm/1561
+seqtk seq -L 500 scaffolds.fasta > filtered_scaffolds.fasta
+poetry run quast.py filtered_scaffolds.fasta -o quast
+```
+This first example yielded a decent enough assembly. 4.2 MBs, 38% GC, 31 contigs > 500bp, L50 is 3. 
+
 ## Environment
 Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`
