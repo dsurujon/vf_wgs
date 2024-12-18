@@ -44,11 +44,14 @@ fastp --in1 VF_WT_1563D_S186_R1_001.fastq.gz --in2 VF_WT_1563D_S186_R2_001.fastq
 fastp --in1 VF_WT_1564_S182_R1_001.fastq.gz --in2 VF_WT_1564_S182_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1564.fastp.html
 ```
 
-The duplication rates are overall pretty high, between 10-20%. This can impact the mutation calls, allele frequency estimates.    
+**The duplication rates are overall pretty high, between 10-20%**. This can impact the mutation calls, allele frequency estimates.    
 The other red flag was a sawtooth pattern on the insert size distributions, with dips at 10x nucleotides. Consider de-duplicating using something like [fastuniq](https://pmc.ncbi.nlm.nih.gov/articles/PMC3527383/)     
+Sample 1563D insert size distribution looks low. There's only 37% of the read pairs with unknown insert size. Peak seems to be around ~260bp. 
     
 
 ### Variant comparisons
+Note that the allele frequency information from the BreSeq output may not be super reliable because of the high duplication rates. 
+
 Here we run the custom adaptation analysis from [here](https://github.com/dsurujon/Adaptation/tree/master). The scripts have been copied under `./code`.     
 Note: it looks like the reference genome used in this analysis was the assembly `GCA_000011805.1`. So first we download this reference
 ```
