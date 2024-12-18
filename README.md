@@ -23,6 +23,9 @@ poetry run python ./code/fastani_visualize.py \
     ./output/fastani/ES114_2008_vs_new_fastANI.png
 ```
 
+![image](output/fastani/ES114_2008_vs_new_fastANI.png)
+Overall the genomes overlap well
+
 ### quality control
 ```
 cd drive-download-20241111T172643Z-001/QUO1002548-20221114/Illumina\ DNA\ Reads/
