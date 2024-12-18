@@ -50,9 +50,6 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/011/805/GCF_000011805.1_AS
 gunzip GCF_000011805.1_ASM1180v1_genomic.gbff.gz
 ```
 
-Using bcftools/vcftools: refer to `code/analyze_variants.sh`
-
-
 Then run the analysis scripts
 ```
 python ./code/copy_gd.py -e ./drive-download-20241111T172643Z-001/QUO1002548-20221114/Variant\ Calling/ \
@@ -72,9 +69,11 @@ poetry run python ./code/filter_gd.py -i output/variants/gd/ \
     -o /root/Alix/output/variants/filtered_l10_u50_flip.csv \
     -l 10 -u 50 -C
 ```
-There were a total of 5 loci with genotypes that differed across the groups: 
-* VF_RS04475 (on CP000020)
-* VF_RS05560 (on CP000021)
+
+As a slightly different approach, we also get mutations unique to each group using bcftools/vcftools. For this analysis refer to `code/analyze_variants.sh`
+
+
+Across both analyses, there were a total of 5 loci with genotypes that differed across the groups: 
 
 | Contig              | Cordinate | New Locus tag | Old Locus Tag |
 | :------------------ | :-------: | :-------------: | --------: |
