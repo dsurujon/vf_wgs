@@ -96,10 +96,12 @@ These loci also had additional mutations that were common across all samples.
 
 #### VF_RS04475
 Annotated CDS on the RefSeq assembly is frameshifted and has internal stops.     
-There is a 1bp deletion at 940,694 that is present in 1561, 1563 and 1563A (3/4 strains with the noted phenotype). 
+There is a 1bp deletion at 940,694 that is present in 1561, 1563 and 1563A (3/4 strains with the noted phenotype).     
+- Does this correct the frameshift i.e. gain of function??
 
 #### tRNA-Arg intergenic region
-This region on the reference genome is very repetitive, with multiple copies of the tRNA gene in tandem. There are mutations and new junctions around VF_T0020 - VF_T0025 across all samples. This might just be a challenging region to sequence with Illumina due to the repeats. 
+This region on the reference genome is very repetitive, with multiple copies of the tRNA gene in tandem. There are mutations and new junctions around VF_T0020 - VF_T0025 across all samples. This might just be a challenging region to sequence with Illumina due to the repeats.     
+The mutation unique to the WT group (Del 3bp @ 583747-583751) is only present on 2 strains (1561TB, 1563D). 
 
 #### chiP
 Of the above mutations/loci, the chiP porin mutations seem to have something interesting going on. There's 2 genotypes, one with many mutations (including V344V @ 2123019, T338T), and another with a single C->T mutation (L306L @ 2123133). All mutations are at the C term end of the chiP CDS. 
@@ -107,13 +109,12 @@ Of the above mutations/loci, the chiP porin mutations seem to have something int
 ChiP is an outer membrane porin that is involved in the transport of chito-oligosaccharides. 
 
 #### hdfR / VF_RS18695
-Intergenic mutation. All samples have missing coverage around the start of the transporter gene (VF_RS18695). On the RefSeq assembly, the annotation for the transporter has a missing N terminal end. The part that is missing from the sequenced strains correspond to an additional gap near the N terminal end of the CDS.     
+Intergenic mutation. All samples have missing coverage around the start of the transporter gene (VF_RS18695). On the RefSeq assembly, the annotation for the transporter has a missing N terminal end. The part that is missing from the sequenced strains correspond to an additional gap near the N terminal end of the CDS. Differences in variant calling here may be explained by the spotty coverage.     
 All samples have 3-8 mutations near the missing region (intergenic), the mutations are consistent across samples. 
 
 #### rtxA2
-All samples have a couple of consistent rtxA2 mutations. 
-
-
+All samples have a couple of consistent rtxA2 mutations (D1795N, L1265F). The mutations that are strain-specific mostly are synonymous (P861P, P1783P, A1782A).     
+1561ER, 1563B have an additional D865E - but this doesn't seem to correlate with phenotype. 
 
 ## Environment
 Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`
