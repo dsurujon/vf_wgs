@@ -96,9 +96,12 @@ Across both analyses, there were a total of 5 loci with genotypes that differed 
 These loci also had additional mutations that were common across all samples.     
 
 #### VF_RS04475
-Annotated CDS on the RefSeq assembly is frameshifted and has internal stops.     
+Annotated CDS on the RefSeq assembly is frameshifted and has internal stops. It's an MMPL family transporter.    
 There is a 1bp deletion at 940,694 that is present in 1561, 1563 and 1563A (3/4 strains with the noted phenotype).     
 - Does this correct the frameshift i.e. gain of function??
+The GenBank record has the mutation in between 2 CDS, whereas the RefSeq record has merged the two into one large CDS, but notes an internal frameshift. The Bakta annotation on the de novo assembly of 1561 is a large CDS that looks intact. So there's a chance this is a gain of function mutation.     
+[MMPL review in Mtb](https://pubmed.ncbi.nlm.nih.gov/25986884/)
+this family of transporters seem to be involved in lipid transport, so maybe it has an effect on glycerol or glycerol derivatives
 
 #### tRNA-Arg intergenic region
 This region on the reference genome is very repetitive, with multiple copies of the tRNA gene in tandem. There are mutations and new junctions around VF_T0020 - VF_T0025 across all samples. This might just be a challenging region to sequence with Illumina due to the repeats.     
