@@ -166,3 +166,10 @@ Contig 8 has a copy of lacZ, followed by 2 predicted oriT sites, a gap and final
 
 ## Environment
 Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`. Some of the tools used in this analysis were already installed on my machine (e.g. amrfinderplus, which is a dependency of bakta), those will not be included in the bash script. 
+
+### to do
+- (QC) deduplicate reads, rerun breseq
+- (ASM) de novo assemblies for each strain (from dedup fastq)
+- (ASM) is the MMPL transporter intact in the de novo asm?
+- (ASM) is there a duplication of chiP? check coverage on de novo asm
+- conservation of MMPL transporter across phylogeny?
