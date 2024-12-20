@@ -32,25 +32,30 @@ This comparison also looks fine overlap. Suspiciously like the prior comparison.
 ### quality control
 ```
 cd drive-download-20241111T172643Z-001/QUO1002548-20221114/Illumina\ DNA\ Reads/
-fastp --in1 VF_WT_1561_S179_R1_001.fastq.gz --in2 VF_WT_1561_S179_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561.fastp.html
-fastp --in1 VF_WT_1561ER_S187_R1_001.fastq.gz --in2 VF_WT_1561ER_S187_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561ER.fastp.html
-fastp --in1 VF_WT_1561TB_S188_R1_001.fastq.gz --in2 VF_WT_1561TB_S188_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561TB.fastp.html
-fastp --in1 VF_WT_1562_S180_R1_001.fastq.gz --in2 VF_WT_1562_S180_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1562.fastp.html
-fastp --in1 VF_WT_1563_S181_R1_001.fastq.gz --in2 VF_WT_1563_S181_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563.fastp.html
-fastp --in1 VF_WT_1563A_S183_R1_001.fastq.gz --in2 VF_WT_1563A_S183_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563A.fastp.html
-fastp --in1 VF_WT_1563B_S184_R1_001.fastq.gz --in2 VF_WT_1563B_S184_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563B.fastp.html
-fastp --in1 VF_WT_1563C_S185_R1_001.fastq.gz --in2 VF_WT_1563C_S185_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563C.fastp.html
-fastp --in1 VF_WT_1563D_S186_R1_001.fastq.gz --in2 VF_WT_1563D_S186_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563D.fastp.html
-fastp --in1 VF_WT_1564_S182_R1_001.fastq.gz --in2 VF_WT_1564_S182_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1564.fastp.html
+fastp --in1 VF_WT_1561_S179_R1_001.fastq.gz --in2 VF_WT_1561_S179_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561.fastp.html --dedup --out1 1561_R1_dedup.fastq.gz --out2 1561_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1561ER_S187_R1_001.fastq.gz --in2 VF_WT_1561ER_S187_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561ER.fastp.html --dedup --out1 1561ER_R1_dedup.fastq.gz --out2 1561ER_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1561TB_S188_R1_001.fastq.gz --in2 VF_WT_1561TB_S188_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1561TB.fastp.html --dedup --out1 1561TB_R1_dedup.fastq.gz --out2 1561TB_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1562_S180_R1_001.fastq.gz --in2 VF_WT_1562_S180_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1562.fastp.html --dedup --out1 1562_R1_dedup.fastq.gz --out2 1562_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1563_S181_R1_001.fastq.gz --in2 VF_WT_1563_S181_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563.fastp.html --dedup --out1 1563_R1_dedup.fastq.gz --out2 1563_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1563A_S183_R1_001.fastq.gz --in2 VF_WT_1563A_S183_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563A.fastp.html --dedup --out1 1563A_R1_dedup.fastq.gz --out2 1563A_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1563B_S184_R1_001.fastq.gz --in2 VF_WT_1563B_S184_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563B.fastp.html --dedup --out1 1563B_R1_dedup.fastq.gz --out2 1563B_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1563C_S185_R1_001.fastq.gz --in2 VF_WT_1563C_S185_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563C.fastp.html --dedup --out1 1563C_R1_dedup.fastq.gz --out2 1563C_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1563D_S186_R1_001.fastq.gz --in2 VF_WT_1563D_S186_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1563D.fastp.html --dedup --out1 1563D_R1_dedup.fastq.gz --out2 1563D_R2_dedup.fastq.gz
+fastp --in1 VF_WT_1564_S182_R1_001.fastq.gz --in2 VF_WT_1564_S182_R2_001.fastq.gz -h ../../../output/fastp/VF_WT_1564.fastp.html --dedup --out1 1564_R1_dedup.fastq.gz --out2 1564_R2_dedup.fastq.gz
+
+cd ../../..
+mkdir output/fastq_dedup
+cp drive-download-20241111T172643Z-001/QUO1002548-20221114/Illumina\ DNA\ Reads/*_dedup.fastq.gz output/fastq_dedup/
 ```
 
-**The duplication rates are overall pretty high, between 10-20%**. This can impact the mutation calls, allele frequency estimates.    
-The other red flag was a sawtooth pattern on the insert size distributions, with dips at 10x nucleotides. Consider de-duplicating using something like [fastuniq](https://pmc.ncbi.nlm.nih.gov/articles/PMC3527383/)     
+**The duplication rates are overall pretty high, between 10-20%**. This can impact the mutation calls, allele frequency estimates. This is why fastp was run once more with the `--dedup` parameter.        
+The other red flag was a sawtooth pattern on the insert size distributions, with dips at 10x nucleotides.     
 Sample 1563D insert size distribution looks low. There's only 37% of the read pairs with unknown insert size. Peak seems to be around ~260bp. 
     
 
+
 ### Variant comparisons
-Note that the allele frequency information from the BreSeq output may not be super reliable because of the high duplication rates. 
+Note that the allele frequency information from the initial BreSeq output may not be super reliable because of the high duplication rates. 
 
 Here we run the custom adaptation analysis from [here](https://github.com/dsurujon/Adaptation/tree/master). The scripts have been copied under `./code`.     
 Note: it looks like the reference genome used in this analysis was the assembly `GCA_000011805.1`. So first we download this reference
