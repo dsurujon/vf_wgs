@@ -169,7 +169,8 @@ poetry run python ./code/fastani_visualize.py \
 There's a section at the very end that doesn't map to the ES114 reference, this is probably the additional plasmid with the engineered regulatory construct.     
 Contig 8 has a copy of lacZ, followed by 2 predicted oriT sites, a gap and finally the acs gene. It also looks like it's mapping to Chromosome I (CP000020.2), and the genetic context following acs (2,672,512-2,674,461 on chromosome) is conserved.       
     
-This assembly process was repeated for all samples, starting from the deduplicated fastq files by running the script `make_denovo_assemblies.sh`.    
+This assembly and annotation process was repeated for all samples, starting from the deduplicated fastq files by running the script `make_denovo_assemblies.sh`.      
+The assemblies are also aligned to the ES114 reference with `minimap2` in order to generate an MSA file across all the de novo assemblies. This is done in the script `align_asms.sh`
 
 ## Environment
 Used poetry as the environment manager. For non-python requirements please see `code/nonpython_install.sh`. Some of the tools used in this analysis were already installed on my machine (e.g. amrfinderplus, which is a dependency of bakta), those will not be included in the bash script. 
