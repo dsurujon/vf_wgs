@@ -58,3 +58,15 @@ curl --location --remote-name https://github.com/bbuchfink/diamond/releases/down
 tar xzf diamond-linux64.tar.gz
 rm diamond-linux64.tar.gz
 mv diamond /root/bin/
+
+#mafft
+wget https://mafft.cbrc.jp/alignment/software/mafft-7.525-without-extensions-src.tgz
+gunzip -cd mafft-7.525-without-extensions-src.tgz | tar xfv -
+cd mafft-7.525-without-extensions/core
+make clean
+make
+su
+make install
+cp mafft /root/bin/
+cd ../..
+rm mafft-7.525-without-extensions-src.tgz
