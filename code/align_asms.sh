@@ -48,3 +48,6 @@ done
 
 # Combine all FASTA files into a single file
 cat $OUTPUT_DIR*.sorted.fasta > "${OUTPUT_DIR}/combined_sequences.fasta"
+# Define output MSA filename
+OUTPUT_MSA="${BASE_DIR}/output/msa/msa.fasta"
+mafft --add "${OUTPUT_DIR}/combined_sequences.fasta" --reorder "$REFERENCE" > "$OUTPUT_MSA"

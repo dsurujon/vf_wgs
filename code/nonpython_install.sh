@@ -70,3 +70,17 @@ make install
 cp mafft /root/bin/
 cd ../..
 rm mafft-7.525-without-extensions-src.tgz
+
+# parsnp
+cd ~/tools
+git clone https://github.com/marbl/parsnp.git
+cd parsnp/muscle
+./autogen.sh
+./configure --prefix=$PWD CXXFLAGS='-fopenmp'
+make install
+cd ..
+./autogen.sh
+export ORIGIN=\$ORIGIN
+./configure LDFLAGS='-Wl,-rpath,muscle/lib/"
+make LDADD=-lMUSCLE-3.7 
+make install
