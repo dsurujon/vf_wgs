@@ -104,7 +104,7 @@ These loci also had additional mutations that were common across all samples.
 Annotated CDS on the RefSeq assembly is frameshifted and has internal stops. It's an MMPL family transporter.    
 There is a 1bp deletion at 940,694 that is present in 1561, 1563 and 1563A (3/4 strains with the noted phenotype).     
 - Does this correct the frameshift i.e. gain of function??
-The GenBank record has the mutation in between 2 CDS, whereas the RefSeq record has merged the two into one large CDS, but notes an internal frameshift. The Bakta annotation on the de novo assembly of 1561 is a large CDS that looks intact. So there's a chance this is a gain of function mutation.     
+The GenBank record has the mutation in between 2 CDS, whereas the RefSeq record has merged the two into one large CDS, but notes an internal frameshift. The Bakta annotation on the de novo assemblies of all samples look like a large intact CDS. This might be either an error on the refseq record, or a gain of function that appears in all Purdy lab strains     
 [MMPL review in Mtb](https://pubmed.ncbi.nlm.nih.gov/25986884/)
 this family of transporters seem to be involved in lipid transport, so maybe it has an effect on glycerol or glycerol derivatives
 
